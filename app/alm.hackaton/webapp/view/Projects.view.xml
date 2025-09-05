@@ -7,7 +7,7 @@
 >
     <Page
         id="page"
-        title="Relatório de conformidade"
+        title="ALM Report"
     >
         <Table
             id="projectsTable"
@@ -20,11 +20,11 @@
                 <OverflowToolbar>
                     <content>
                         <Title
-                            text="Projetos"
+                            text="Projects"
                             level="H2"
                         />
                         <ToolbarSpacer />
-                        <SearchField width="16rem" liveChange="onSearch"/>
+                        <SearchField width="16rem" liveChange="onSearch" placeholder="Search"/>
                     </content>
                 </OverflowToolbar>
             </headerToolbar>
@@ -33,19 +33,19 @@
                     <Text text="Título" />
                 </Column>
                 <Column>
-                    <Text text="Propósito" />
+                    <Text text="Purpose" />
                 </Column>
                 <Column>
-                    <Text text="Status Operacional" />
+                    <Text text="Operational Status" />
                 </Column>
                 <Column>
-                    <Text text="ID Fase" />
+                    <Text text="Phase ID" />
                 </Column>
                 <Column>
                     <Text text="Status" />
                 </Column>
                 <Column>
-                    <Text text="Processar" />
+                    <Text text="Process" />
                 </Column>
             </columns>
             <items>
@@ -63,7 +63,7 @@
                             text="{local>status}"
                             active="true"
                             inverted="true"
-                            state="{= ${local>status} === 'Confirmado' ? 'Success' : 'Error'}"
+                            state="{= ${local>status} === 'Confirmed' ? 'Success' : 'Error'}"
                             icon="sap-icon://error"
                         />
                         <Button icon="sap-icon://process" tooltip="Gerar relatório" press="handleProcess"/>

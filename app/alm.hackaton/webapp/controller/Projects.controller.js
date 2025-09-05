@@ -49,9 +49,10 @@ sap.ui.define([
 
         handleProcess(oEvent) {
             const that = this
-            MessageBox.confirm("Você deseja realizar o processamento do projeto selecionado?", {
-                actions: [MessageBox.Action.OK, MessageBox.Action.CANCEL],
+            MessageBox.confirm("Do you want to proceed with processing the selected project?", {
+                actions: [MessageBox.Action.OK, "Cancel"],
                 emphasizedAction: MessageBox.Action.OK,
+                title: "Confirmation",
                 onClose: function (sAction) {
                     if( sAction === "OK") {
                         that.onProcess(oEvent)
@@ -90,7 +91,7 @@ sap.ui.define([
             });
 
             this._oDialog = new Dialog({
-                title: "Gerando relatório",
+                title: "Build report",
                 type: DialogType.Message,
                 content: oVBox,
                 showHeader: true,
@@ -135,7 +136,7 @@ sap.ui.define([
                 if (progress >= 100) {
                     clearInterval(this._interval);
                     setTimeout(() => {
-                        oPhaseText.setText("Processamento concluído!");
+                        oPhaseText.setText("Finished!");
                         oProgress.setVisible(false)
                         closeButton.setEnabled(true)
 
